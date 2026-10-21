@@ -5,9 +5,8 @@
 html,
 body {
     height: 100%;
-}
-
-body {
+    display: flex;
+    flex-flow: column;
     margin: 0;
 }
 
@@ -23,7 +22,7 @@ body {
 
 #toolbar {
     background-color: #e9e9e9;
-    padding: 18px;
+    padding: 10px;
     display: flex;
 }
 
@@ -52,6 +51,8 @@ body {
 
 #bottom {
     display: flex;
+    background-color: rgb(250, 250, 250);
+    flex: 1 1 auto;
 }
 
 #bottom>* {
@@ -65,5 +66,5 @@ body {
 }
 
 .button_column>* {
-    margin-bottom: 30px;
+    margin-bottom: 16px;
 }
