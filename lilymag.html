@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LilyMaG - Lilypond Maker for Guitar</title>
+    <link rel="stylesheet" href="lilymag.css">
+    <script src="lilymag.js"></script>
+</head>
+<body>
+    <div id="frettboard">
+        <canvas id="canvas"></canvas>
+    </div>
+    <div id="toolbar">
+        <span class="toolbar_item">
+            <select id="new_bar" onchange="insertNewBar()">
+                <option value="none" selected>new bar:</option>
+                <option id="opt_one_voice" value="1">1 voice</option>
+                <option id="opt_two_voices" value="2">2 voices</option>
+            </select>
+        </span>
+        <span class="toolbar_item">
+            <select id="insert" onchange="insertElement()">
+                <option value="none" selected>insert:</option>
+                <hr>
+                <option id="opt_rest" value="r" title="rest">rest</option>
+                <option id="opt_duration" value="d" title="duration">duration</option>
+                <option id="opt_space" value="s" title="invisible rest">spacer</option>
+                <hr>
+                <option id="opt_tie" value="~">tie ~</option>
+                <option id="opt_slur_start" value="(">slur start (</option>
+                <option id="opt_slur_end" value=")">slur end )</option>
+                <option id="opt_glissando" value="\glissando">glissando</option>
+                <hr>
+                <option id="opt_lily" value="lily">lilypond</option>
+                <option id="opt_zigzag" value="zigzag">zigzag</option>
+            </select>
+        </span>
+        <span class="toolbar_item">
+            <button id="btn_change_last" onclick="changeLastNote()">change last note</button>
+        </span>
+        <span class="toolbar_item" id="chord_span">
+            <input type="checkbox" id="chb_chord" onclick="chordOnOff()">
+            <label for="chb_chord" id="lbl_chord">chord</label>
+            <input type="checkbox" id="chb_arpeggio">
+            <label for="chb_arpeggio" id="lbl_arpeggio">arpeggio</label>
+        </span>
+        <span class="toolbar_item" id="triplet_span">
+            <input type="checkbox" id="chb_triplet" onclick="tripletOnOff()">
+            <label for="chb_triplet" id="lbl_triplet">triplet</label>
+        </span>
+        <span class="toolbar_item">
+            <label for="number_of_frets">number of frets:</label>
+            <select id="number_of_frets" onchange="changeFrets()">
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+            </select>
+        </span>
+        <span class="toolbar_item">
+            <select id="sharp_or_flat">
+                <option value="sharp">sharp (#)</option>
+                <option value="flat">flat (b)</option>
+            </select>
+        </span>
+        <button id="btn_clear" onclick="clearAll()">clear</button>
+        <button id="btn_to_clipboard" onclick="toClipboard()">to clipbard</button>
+        <button id="btn_undo" onclick="undo()">undo</button>
+        <button id="btn_redo" onclick="redo()">redo</button>
+        <button id="btn_help" onclick="goToHelpPage()">help</button>
+    </div>
+    <div id="bottom">
+        <fieldset class="button_column">
+            <legend>duration:</legend>
+            <div>
+                <div>
+                    note: <span><button id="btn_uncheck_all_durations" onclick="uncheckAllDurations()">uncheck</button></span>
+                </div>
+                <div>
+                    <input type="radio" id="rdb_1" name="duration" value="1">
+                    <label for="rdb_1">1</label>
+                </div>
+                <div>
+                    <input type="radio" id="rdb_2" name="duration" value="2">
+                    <label for="rdb_2">2</label>
+                </div>
+                <div>
+                    <input type="radio" id="rdb_4" name="duration" value="4">
+                    <label for="rdb_4">4</label>
+                </div>
+                <div>
+                    <input type="radio" id="rdb_8" name="duration" value="8">
+                    <label for="rdb_8">8</label>
+                </div>
+                <div>
+                    <input type="radio" id="rdb_16" name="duration" value="16">
+                    <label for="rdb_16">16</label>
+                </div>
+                <div>
+                    <input type="radio" id="rdb_32" name="duration" value="32">
+                    <label for="rdb_32">32</label>
+                </div>
+                <div>
+                    <input type="radio" id="rdb_64" name="duration" value="64">
+                    <label for="rdb_64">64</label>
+                </div>
+                <!-- <div>
+                    <button id="btn_uncheck_all_durations" onclick="uncheckAllDurations()">uncheck</button>
+                </div> -->
+            </div>
+            <div>
+                <label for="dot"> dot : </label>
+                <select id="dot">
+                    <option value="none">none</option>
+                    <option value=".">1.</option>
+                    <option value="..">2..</option>
+                    <option value="...">3...</option>
+                    <option value="....">4....</option>
+                </select>
+            </div>
+            <div title="acciaccatura (grace note)">
+                <input type="checkbox" id="chb_grace">
+                <label for="chb_grace" id="lbl_grace">grace</label>
+            </div>
+            <div>
+                <input type="checkbox" id="chb_fermata">
+                <label for="chb_fermata">fermata</label>
+            </div>
+        </fieldset>
+        <fieldset class="button_column">
+            <legend>fingering:</legend>
+            <div>
+                <div>
+                    left hand: <span><button id="btn_uncheck_all_left_fingers" onclick="uncheckAllLeftFingers()">uncheck</button></span>
+                </div>
+                <div>
+                    <input type="radio" id="lf_1" name="lfinger" value="1">
+                    <label for="lf_1">1 (index)</label>
+                </div>
+                <div>
+                    <input type="radio" id="lf_2" name="lfinger" value="2">
+                    <label for="lf_2">2 (middle)</label>
+                </div>
+                <div>
+                    <input type="radio" id="lf_3" name="lfinger" value="3">
+                    <label for="lf_3">3 (ring)</label>
+                </div>
+                <div>
+                    <input type="radio" id="lf_4" name="lfinger" value="4">
+                    <label for="lf_4">4 (little)</label>
+                </div>
+                <div>
+                    <input type="radio" id="lf_0" name="lfinger" value="0">
+                    <label for="lf_0">0 (open string)</label>
+                </div>
+                <!-- <div>
+                    <button id="btn_uncheck_all_left_fingers" onclick="uncheckAllLeftFingers()">uncheck</button>
+                </div> -->
+            </div>
+            <label for="barre">barre fret:</label>
+            <select name="barre" id="barre">
+                <option value="none">none</option>
+                <option value="I">1</option>
+                <option value="II">2</option>
+                <option value="III">3</option>
+                <option value="IV">4</option>
+                <option value="V">5</option>
+                <option value="VI">6</option>
+                <option value="VII">7</option>
+                <option value="VIII">8</option>
+                <option value="IX">9</option>
+                <option value="X">10</option>
+            </select>
+            <div>
+                <label for="r_h_finger">right hand:</label>
+                <select name="r_h_finger" id="r_h_finger">
+                    <option value="none">none</option>
+                    <option value="1">p (thumb)</option>
+                    <option value="2">i (index)</option>
+                    <option value="3">m (middle)</option>
+                    <option value="4">a (ring)</option>
+                    <option value="5">c (little)</option>
+                </select>
+            </div>
+            <div>
+                <label for="ornament">ornament:</label>
+                <select name="ornament" id="ornament">
+                    <option value="none">none</option>
+                    <option value="trill">trill</option>
+                    <option value="prall">prall</option>
+                    <option value="mordent">mordent</option>
+                    <option value="turn">turn</option>
+                </select>
+            </div>
+            <div>
+                <label for="articulation">articulation:</label>
+                <select name="articulation" id="articulation">
+                    <option value="none">none</option>
+                    <option value="accent">accent</option>
+                    <option value="marcato">marcato</option>
+                    <option value="staccato">staccato</option>
+                    <option value="tenuto">tenuto</option>
+                </select>
+            </div>
+        </fieldset>
+        <textarea id="editor" spellcheck="false"></textarea>
+    </div>
+</body>
+</html>
