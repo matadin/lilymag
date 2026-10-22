@@ -6,7 +6,7 @@
 
 LilyMaG is a simple tool that helps guitarists create music notation using a virtual fretboard. By clicking on the fretboard, you can generate snippets of [LilyPond](https://lilypond.org/) code that can be copied into a LilyPond source file and used to produce guitar scores.
 
-LilyPond is a powerful music engraving program that produces high-quality sheet music from text-based notation.
+[LilyPond](https://lilypond.org/) is a powerful music engraving program that produces high-quality sheet music from text-based notation.
 
 ## What LilyMaG can (and cannot) do
 
@@ -32,6 +32,6 @@ To use LilyMaG offline, download the files into the same folder on your computer
 
 LilyMaG application is [here](https://matadin.github.io/lilymag/).
 
-Help file is [here](https://matadin.github.io/lilymag/help/lilymag_help.html).
+Help file is [here](https://matadin.github.io/lilymag/help/index.html).
 
 Project files are [here](https://github.com/matadin/lilymag).
