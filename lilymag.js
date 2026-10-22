@@ -748,13 +748,13 @@ class Point {
     draw(index) {
         // point color:
         if (index === 0) {
-            ctx.fillStyle = "rgb(0, 0, 0)";
+            ctx.fillStyle = "rgb(0, 0, 0)"; // black
         } else if (index === 1) {
-            ctx.fillStyle = "rgb(230, 160, 130)";
+            ctx.fillStyle = "rgb(227, 83, 54)"; // terracotta (orange brown)
         } else if (index === 2) {
-            ctx.fillStyle = "rgb(200, 230, 210)";
+            ctx.fillStyle = "rgb(172, 225, 175)"; // celadon (greyish green)
         } else {
-            ctx.fillStyle = "rgb(245, 220, 245)";
+            ctx.fillStyle = "rgb(250, 199, 242)"; // dusty pink
         }
         // calculate radius:
         let radius = fretDistance / 7;
@@ -923,7 +923,7 @@ function changeLastNote() {
 }
 
 function goToHelpPage() {
-    window.open('lilymag_help.html', '_blank');
+    window.open('help/lilymag_help.html', '_blank');
 }
 
 

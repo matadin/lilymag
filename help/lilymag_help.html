@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LilyMaG Help</title>
+  <style>
+    :root {
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f5f6f8;
+      color: #242a31;
+      font: 16px/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    main {
+      max-width: 820px;
+      margin: 32px auto;
+      padding: 34px 42px 46px;
+      background: #fff;
+      border: 1px solid #e2e5e9;
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      line-height: 1.2;
+      margin: 0 0 6px;
+    }
+
+    .subtitle {
+      color: #596574;
+      margin: 0 0 26px;
+    }
+
+    h2 {
+      font-size: 1.27rem;
+      margin: 30px 0 8px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #e6e8eb;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    a {
+      color: #145da0;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    code {
+      background: #f0f2f4;
+      border-radius: 4px;
+      padding: 1px 5px;
+      font-size: .94em;
+    }
+
+    .note {
+      background: #f3f7fb;
+      border-left: 3px solid #7299c1;
+      padding: 12px 16px;
+      margin: 18px 0;
+    }
+
+    footer {
+      margin-top: 34px;
+      color: #67717c;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        margin: 0;
+        padding: 24px 20px 36px;
+        border: 0;
+        border-radius: 0;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>LilyMaG Help</h1>
+      <p class="subtitle">LilyPond Maker for Guitar</p>
+    </header>
+
+    <section>
+      <h2>What is LilyMaG?</h2>
+      <p><strong>LilyMaG</strong> stands for <strong>Lily</strong>Pond <strong>Ma</strong>ker for
+        <strong>G</strong>uitar.
+        It helps you enter guitar notes by clicking on a virtual fretboard and generates code for <a
+          href="https://lilypond.org/" target="_blank" rel="noopener noreferrer">LilyPond</a>, a music engraving
+        program.
+      </p>
+      <p>You can copy the generated code into a LilyPond source file and use it as part of a guitar score.</p>
+    </section>
+
+    <section>
+      <h2>What LilyMaG does — and doesn't do</h2>
+      <p>LilyMaG is a note-entry aid, not a complete graphical score editor. Clicking notes on the fretboard does not
+        automatically produce a finished score. You will need at least a basic understanding of LilyPond and its
+        notation.</p>
+      <p>The benefit is flexibility: LilyMaG can help you enter notes quickly, while LilyPond lets you refine the result 
+        from a simple sketch to a carefully engraved score.</p>
+    </section>
+
+    <section>
+      <h2>Using LilyMaG online or offline</h2>
+      <p>You can use LilyMaG in your browser online or download it for offline use. Keep these files together in one
+        folder:</p>
+      <ul>
+        <li><code>index.html</code> — main application page</li>
+        <li><code>lilymag.css</code> — styling</li>
+        <li><code>lilymag.js</code> — application logic</li>
+        <li><code>help</code> — folder which contains this help page (optional)</li>
+      </ul>
+      <p>To run LilyMaG offline, double-click <code>index.html</code>. No installation is required.</p>
+    </section>
+
+    <section>
+      <h2>Getting started</h2>
+      <p>Click a position on the virtual fretboard. Each click adds the corresponding LilyPond note code to the editor
+        in the lower-left part of the application.</p>
+      <p>Colored dots show your three most recently selected notes:</p>
+      <ul>
+        <li><strong>Black</strong> — most recent note</li>
+        <li><strong>Orange (Terracotta)</strong> — previous note</li>
+        <li><strong>Green (Celadon)</strong> — note before that</li>
+      </ul>
+      <p>Try clicking several fretboard positions and watch the editor update.</p>
+    </section>
+
+    <section>
+      <h2>Understanding the generated code</h2>
+      <p>The generated notation identifies the note and the guitar string on which it was selected. The string number
+        follows a slash in the displayed notation.</p>
+      <p>You can paste the result into a LilyPond source file, then adjust it and add the remaining musical details as
+        needed.</p>
+    </section>
+
+    <section>
+      <h2>Sharps and flats</h2>
+      <p>Some pitches have two names, such as F-sharp (F♯) and G-flat (G♭). Use the <strong>sharp/flat switch</strong>
+        on the toolbar to choose how these notes are written.</p>
+      <p>For example, LilyPond writes F-sharp as <code>fis</code> and G-flat as <code>ges</code>.</p>
+    </section>
+
+    <section>
+      <h2>Toolbar commands</h2>
+      <ul>
+        <li><strong>To Clipboard:</strong> Copies the editor contents so you can paste them into your preferred text
+          editor.</li>
+        <li><strong>Clear:</strong> Clears the editor and resets the fretboard, ready for a new passage.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Suggested workflow</h2>
+      <ol>
+        <li>Click notes on the virtual fretboard (play around to see what LilyMaG can do).</li>
+        <li>Click <strong>To Clipboard</strong>.</li>
+        <li>Paste the code into your LilyPond source file.</li>
+        <li>Compile the LilyPond file to produce your sheet music.</li>
+      </ol>
+      <p class="note">LilyMaG helps with note entry; LilyPond provides the full range of music engraving features.</p>
+    </section>
+
+    <footer>For more information about LilyPond, visit <a href="https://lilypond.org/">lilypond.org</a>.</footer>
+  </main>
+</body>
+
+</html>
