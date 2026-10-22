@@ -923,7 +923,7 @@ function changeLastNote() {
 }
 
 function goToHelpPage() {
-    window.open('help/lilymag_help.html', '_blank');
+    window.open('help/index.html', '_blank');
 }
 
 
