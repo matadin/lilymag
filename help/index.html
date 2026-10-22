@@ -115,39 +115,62 @@
       <h2>What is LilyMaG?</h2>
       <p><strong>LilyMaG</strong> stands for <strong>Lily</strong>Pond <strong>Ma</strong>ker for
         <strong>G</strong>uitar.
-        It helps you enter guitar notes by clicking on a virtual fretboard and generates code for <a
-          href="https://lilypond.org/" target="_blank" rel="noopener noreferrer">LilyPond</a>, a music engraving
-        program.
       </p>
-      <p>You can copy the generated code into a LilyPond source file and use it as part of a guitar score.</p>
+
+      <p>
+        LilyMaG is a simple tool that helps guitarists create music notation using a virtual fretboard. By clicking on
+        the fretboard, you can generate snippets of <a href="https://lilypond.org/" target="_blank"
+          rel="noopener noreferrer">LilyPond</a> code that can be copied into a
+        LilyPond source file and used to produce guitar scores.
+      </p>
+      <p>
+        LilyPond is a powerful music engraving program that produces high-quality sheet music from text-based notation.
+      </p>
     </section>
 
     <section>
-      <h2>What LilyMaG does — and doesn't do</h2>
+      <h2>What LilyMaG can (and cannot) do</h2>
       <p>LilyMaG is a note-entry aid, not a complete graphical score editor. Clicking notes on the fretboard does not
         automatically produce a finished score. You will need at least a basic understanding of LilyPond and its
         notation.</p>
-      <p>The benefit is flexibility: LilyMaG can help you enter notes quickly, while LilyPond lets you refine the result 
-        from a simple sketch to a carefully engraved score.</p>
+      <p>
+        The advantage of this approach is flexibility. You can use LilyMaG to generate a quick, simple score and then
+        refine it directly in LilyPond. You are not limited by LilyMaG's features, but only by what LilyPond can do and
+        your knowledge of how to use it.
+      </p>
     </section>
 
     <section>
       <h2>Using LilyMaG online or offline</h2>
+      <p>You can use LilyMaG directly in your web browser or download it and run it locally, without an internet
+        connection.</p>
+      <p>The application consists of just three files:</p>
+
       <p>You can use LilyMaG in your browser online or download it for offline use. Keep these files together in one
         folder:</p>
       <ul>
-        <li><code>index.html</code> — main application page</li>
-        <li><code>lilymag.css</code> — styling</li>
-        <li><code>lilymag.js</code> — application logic</li>
-        <li><code>help</code> — folder which contains this help page (optional)</li>
+        <li><code>index.html</code> - the main application page</li>
+        <li><code>lilymag.css</code> - the visual styling</li>
+        <li><code>lilymag.js</code> - the application logic</li>
       </ul>
-      <p>To run LilyMaG offline, double-click <code>index.html</code>. No installation is required.</p>
+      <p>Help files are in <code>help</code> folder. They are optional.</p>
+      <p>To use LilyMaG offline, download the files into the same folder on your computer and double-click
+        <code>index.html</code>
+        to open it in your browser. No installation is required.
+      </p>
+    </section>
+    <section>
+      <h2>Trying it out</h2>
+      <p>LilyMaG application is <a href="https://matadin.github.io/lilymag/">here</a>. Click around a little bit, and
+        see what output in editor window it produces.</p>
+      <p>If you want code files, project page is <a href="https://github.com/matadin/lilymag">here</a>. Press on the green button
+        <b>Code</b> above the files, and downoad code files in zip file.</p>
     </section>
 
     <section>
       <h2>Getting started</h2>
       <p>Click a position on the virtual fretboard. Each click adds the corresponding LilyPond note code to the editor
-        in the lower-left part of the application.</p>
+        in the lower-right part of the application.</p>
       <p>Colored dots show your three most recently selected notes:</p>
       <ul>
         <li><strong>Black</strong> — most recent note</li>
