@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LilyMaG Help</title>
+  <title>LilyMaG Help — LilyPond Maker for Guitar</title>
   <style>
     :root {
       color-scheme: light;
@@ -46,6 +46,11 @@
       margin: 30px 0 8px;
       padding-bottom: 5px;
       border-bottom: 1px solid #e6e8eb;
+    }
+
+    h3 {
+      font-size: 1.06rem;
+      margin: 22px 0 6px;
     }
 
     p {
@@ -114,105 +119,126 @@
     <section>
       <h2>What is LilyMaG?</h2>
       <p><strong>LilyMaG</strong> stands for <strong>Lily</strong>Pond <strong>Ma</strong>ker for
-        <strong>G</strong>uitar.
-      </p>
-
-      <p>
-        LilyMaG is a simple tool that helps guitarists create music notation using a virtual fretboard. By clicking on
-        the fretboard, you can generate snippets of <a href="https://lilypond.org/">LilyPond</a> code that can be copied
-        into a LilyPond source file and used to produce guitar scores.
-      </p>
-      <p>
-        LilyPond is a powerful music engraving program that produces high-quality sheet music from text-based notation.
-      </p>
+        <strong>G</strong>uitar.</p>
+      <p>LilyMaG helps guitarists enter notes using a virtual fretboard. Each click generates a snippet of <a
+          href="https://lilypond.org/">LilyPond</a> code, which you can copy into a LilyPond source file to create a
+        guitar score.</p>
+      <p>LilyPond is a music engraving program that produces high-quality sheet music from text-based notation.</p>
     </section>
 
     <section>
       <h2>What LilyMaG can (and cannot) do</h2>
       <p>LilyMaG is a note-entry aid, not a complete graphical score editor. Clicking notes on the fretboard does not
-        automatically produce a finished score. You will need at least a basic understanding of LilyPond and its
-        notation.</p>
-      <p>
-        The advantage of this approach is flexibility. You can use LilyMaG to generate a quick, simple score and then
-        refine it directly in LilyPond. You are not limited by LilyMaG's features, but only by what LilyPond can do and
-        your knowledge of how to use it.
-      </p>
+        automatically produce a finished score. To use it effectively, you will need some basic knowledge of LilyPond
+        and its notation.</p>
+      <p>The advantage is flexibility: LilyMaG can help you enter notes quickly, while LilyPond lets you refine the
+        resulting score using its full range of engraving features.</p>
+    </section>
+
+    <section>
+      <h2>Try LilyMaG</h2>
+      <p>Open the <a href="https://matadin.github.io/lilymag/">LilyMaG application</a> and click a few positions on the
+        fretboard. Watch the generated LilyPond code appear in the editor.</p>
+      <p>The <a href="https://github.com/matadin/lilymag">project repository on GitHub</a> contains the source files. To
+        download them, click the green <strong>Code</strong> button and choose <strong>Download ZIP</strong>.</p>
     </section>
 
     <section>
       <h2>Using LilyMaG online or offline</h2>
-      <p>You can use LilyMaG directly in your web browser or download it and run it locally, without an internet
-        connection.</p>
-      <p>The application consists of just three files:</p>
-
-      <p>You can use LilyMaG in your browser online or download it for offline use. Keep these files together in one
-        folder:</p>
+      <p>You can use LilyMaG online or download it to run locally without an internet connection. The application needs
+        just three files, kept together in the same folder:</p>
       <ul>
-        <li><code>index.html</code> - the main application page</li>
-        <li><code>lilymag.css</code> - the visual styling</li>
-        <li><code>lilymag.js</code> - the application logic</li>
+        <li><code>index.html</code> — the main application page</li>
+        <li><code>lilymag.css</code> — the visual styling</li>
+        <li><code>lilymag.js</code> — the application logic</li>
       </ul>
-      <p>Help files are in <code>help</code> folder. They are optional.</p>
-      <p>To use LilyMaG offline, download the files into the same folder on your computer and double-click
-        <code>index.html</code>
-        to open it in your browser. No installation is required.
-      </p>
-    </section>
-    <section>
-      <h2>Trying it out</h2>
-      <p>LilyMaG application is <a href="https://matadin.github.io/lilymag/">here</a>. Click around a little bit, and
-        see what output in editor window it produces.</p>
-      <p>If you want code files, project page is <a href="https://github.com/matadin/lilymag">here</a>. Press on the
-        green button <b>Code</b>, and downoad code files.
-      </p>
+      <p>The optional help files are in the <code>help</code> folder.</p>
+      <p>To run LilyMaG offline, double-click <code>index.html</code> to open it in your browser. No installation is
+        required.</p>
     </section>
 
     <section>
       <h2>Getting started</h2>
-      <p>Click a position on the virtual fretboard. Each click adds the corresponding LilyPond note code to the editor
-        in the lower-right part of the application.</p>
-      <p>Colored dots show your three most recently selected notes:</p>
-      <ul>
-        <li><strong>Black</strong> — most recent note</li>
-        <li><strong>Orange (Terracotta)</strong> — previous note</li>
-        <li><strong>Green (Celadon)</strong> — note before that</li>
-      </ul>
-      <p>Try clicking several fretboard positions and watch the editor update.</p>
-    </section>
+      <h3>1. Create a basic LilyPond score</h3>
+      <p>If you do not already have a LilyPond source file, LilyMaG can generate a starting template.</p>
+      <ol>
+        <li>On the toolbar, open the <strong>Insert</strong> drop-down menu (second from the left).</li>
+        <li>Choose <strong>LilyPond</strong> (second from the bottom). A basic LilyPond source file
+          appears in the editor.</li>
+        <li>Click <strong>To Clipboard</strong> (fourth from the left), then paste the code into your preferred text
+          editor.</li>
+        <li>Remove or comment out any parts you do not need. In LilyPond, a percent sign (<code>%</code>) starts a
+          comment.</li>
+        <li>Find the comment <code>% your score goes here</code>. You will replace it with the notes you generate.</li>
+        <li>Return to LilyMaG and click <strong>Clear</strong> (fifth from the left) to prepare for note entry.</li>
+      </ol>
 
-    <section>
-      <h2>Understanding the generated code</h2>
-      <p>The generated notation identifies the note and the guitar string on which it was selected. The string number
-        follows a slash in the displayed notation.</p>
-      <p>You can paste the result into a LilyPond source file, then adjust it and add the remaining musical details as
-        needed.</p>
+      <h3>2. Enter notes on the fretboard</h3>
+      <p>Click a position on the virtual fretboard. LilyMaG adds the corresponding LilyPond note code to the editor.</p>
+      <p>Colored dots mark the three most recently selected notes:</p>
+      <ul>
+        <li><strong>Black</strong> — the most recent note</li>
+        <li><strong>Orange (terracotta)</strong> — the previous note</li>
+        <li><strong>Green (celadon)</strong> — the note before that</li>
+      </ul>
+      <p>Try clicking several positions to see how the code and fretboard display change.</p>
+
+      <h3>3. Add durations, fingerings, and other details</h3>
+      <p>By default, clicking the fretboard enters the note and its string number. To add information such as note
+        duration, left- or right-hand fingering, or dynamics, use the controls in the lower-left part of the
+        application.</p>
+      <p>Normally, select these options <strong>before</strong> clicking the note. If you forgot to do so, select the
+        desired options and click <strong>Change Last Note</strong> to apply them to the most recently entered note.</p>
+
+      <h3>4. Enter chords</h3>
+      <p>To enter a chord, select the <strong>Chord</strong> checkbox before entering its first note. Click all the
+        notes belonging to the chord, then deselect <strong>Chord</strong> when you have finished.</p>
+
+      <h3>5. Copy the notes and generate a PDF</h3>
+      <p>Click <strong>To Clipboard</strong> and paste the generated note code into your LilyPond source file, replacing
+        the <code>% your score goes here</code> comment. Save the file, then compile it with LilyPond to produce a PDF
+        score.</p>
+      <p class="note">LilyPond must be installed on your computer to compile the source file. LilyMaG itself does not
+        generate PDFs.</p>
     </section>
 
     <section>
       <h2>Sharps and flats</h2>
-      <p>Some pitches have two names, such as F-sharp (F♯) and G-flat (G♭). Use the <strong>sharp/flat switch</strong>
-        on the toolbar to choose how these notes are written.</p>
+      <p>Some pitches can be written in two enharmonically equivalent ways, such as F-sharp (F♯) and G-flat (G♭). Use
+        the <strong>Sharp/Flat</strong> switch on the toolbar to choose which spelling LilyMaG generates.</p>
       <p>For example, LilyPond writes F-sharp as <code>fis</code> and G-flat as <code>ges</code>.</p>
     </section>
 
     <section>
-      <h2>Toolbar commands</h2>
+      <h2>Toolbar controls</h2>
       <ul>
-        <li><strong>To Clipboard:</strong> Copies the editor contents so you can paste them into your preferred text
-          editor.</li>
-        <li><strong>Clear:</strong> Clears the editor and resets the fretboard, ready for a new passage.</li>
+        <li><strong>New Bar</strong> — inserts code for a new measure, including a bar check. It supports one or two
+          voices; using one voice is simpler when starting out.</li>
+        <li><strong>Insert</strong> — inserts LilyPond code for musical features such as rests, ties, and slurs. Hover
+          over an option to see its tooltip.</li>
+        <li><strong>Change Last Note</strong> — applies the currently selected note options to the most recently entered
+          note rather than the next one.</li>
+        <li><strong>Chord</strong> — enables or ends chord entry.</li>
+        <li><strong>Triplet</strong> — enables triplet entry.</li>
+        <li><strong>Number of Frets</strong> — changes the number of frets shown on the virtual fretboard.</li>
+        <li><strong>Sharp/Flat</strong> — selects the spelling of enharmonic notes (for example, <code>cis</code> or
+          <code>des</code>).</li>
+        <li><strong>To Clipboard</strong> — copies the editor contents so you can paste them into another text editor.
+        </li>
+        <li><strong>Clear</strong> — clears the editor and resets the fretboard for a new passage.</li>
       </ul>
     </section>
 
     <section>
       <h2>Suggested workflow</h2>
       <ol>
-        <li>Click notes on the virtual fretboard (play around to see what LilyMaG can do).</li>
-        <li>Click <strong>To Clipboard</strong>.</li>
-        <li>Paste the code into your LilyPond source file.</li>
-        <li>Compile the LilyPond file to produce your sheet music.</li>
+        <li>Generate a basic LilyPond template, if needed, and paste it into your text editor.</li>
+        <li>Use the fretboard and note-entry controls to build a passage in LilyMaG.</li>
+        <li>Click <strong>To Clipboard</strong> and paste the generated code into the LilyPond source file.</li>
+        <li>Repeat as needed, refining the notation in your text editor.</li>
+        <li>Compile the source file with LilyPond to produce your sheet music.</li>
       </ol>
-      <p class="note">LilyMaG helps with note entry; LilyPond provides the full range of music engraving features.</p>
+      <p class="note">LilyMaG makes note entry easier; LilyPond handles the full score and its engraving.</p>
     </section>
 
     <footer>For more information about LilyPond, visit <a href="https://lilypond.org/">lilypond.org</a>.</footer>

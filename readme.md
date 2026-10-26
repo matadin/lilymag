@@ -24,14 +24,17 @@ The application consists of just three files:
 - `lilymag.css` — the visual styling
 - `lilymag.js` — the application logic
 
-Help files are in `help` folder. They are optional.
+The help files are located in the `help` folder. They are optional.
 
-To use LilyMaG offline, download the files into the same folder on your computer and double-click `index.html` to open it in your browser. No installation is required.
+To use LilyMaG offline, download the three application files into the same folder on your computer and double-click `index.html` to open it in your browser. No installation is required.
 
 ## Try it out
 
-LilyMaG application is [here](https://matadin.github.io/lilymag/).
+- [LilyMaG application](https://matadin.github.io/lilymag/)
+- [LilyMaG help page](https://matadin.github.io/lilymag/help/index.html)
+- [LilyMaG source code on GitHub](https://github.com/matadin/lilymag)
 
-Help file is [here](https://matadin.github.io/lilymag/help/index.html).
+## License
 
-Project files are [here](https://github.com/matadin/lilymag).
+LilyMaG is released under the MIT License.
+See the [LICENSE](LICENSE) file for details.
